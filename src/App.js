@@ -5,8 +5,18 @@ import Contact from "./pages/Contact";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Blog from "./pages/Blog";
+import WebFont from 'webfontloader';
+import { useEffect } from "react";
 
 function App() {
+  //load fonts
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Roboto']
+      }
+    });
+  }, []);
   return (
     <>
       <Header />
