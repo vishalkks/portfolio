@@ -1,0 +1,16 @@
+[
+	{
+	  "id": 1,
+	  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur libero eget nunc faucibus bibendum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+	  "name": "John Doe",
+	  "title": "CEO, Acme Inc.",
+	  "avatar": "https://via.placeholder.com/150"
+	},
+	{
+	  "id": 2,
+	  "content": "Sed vitae mi ligula. Sed pretium leo ac sodales interdum. Nullam scelerisque tellus in ex mollis, non dictum dolor consectetur.",
+	  "name": "Jane Smith",
+	  "title": "Marketing Manager, XYZ Corp.",
+	  "avatar": "https://via.placeholder.com/150"
+	}
+]

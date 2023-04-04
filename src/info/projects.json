@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "title": "Super resolution of videos",
+    "image": "/image/icesuper.png",
+    "link": "",
+    "desc": "ML based tool to upscale videos for users in low bandwidth regions. Used image resolution techniques and CNNs to upscale videos. Won the 1st prize of Akamai global hackathon across 10+ regions in 2019.",
+    "tags": [
+      "ML"
+    ],
+    "date": "November 2019"
+
+
+  },
+  {
+    "id": 2,
+    "title": "MusicAI Assistant",
+    "image": "/image/pianoai.png",
+    "link": "https://github.com/NikhilPr95/MusicAI",
+    "desc": "An ML based piano assistant that could complement a user's melody by playing complementing bass harmonies in realtime. Techniques involved using variations of Logistic Regression, KNN, LSTMs, Hidden Markov Models, etc to predict a chord to be played based on the melody input.",
+    "tags": [
+      "ML"
+    ],
+    "date": "Jan-May 2018"
+
+
+  },
+  {
+    "id": 3,
+    "title": "Genre classification based on lyrics",
+    "image": "/image/genre.png",
+    "link": "https://github.com/vishalkks/core",
+    "desc": "An ML based genre classifier based on the lyrics of a song. Used NLP techniques to extract features from the lyrics and then used ML techniques to classify the genre of the song. Generated the dataset by scraping lyrics from a public website which tags songs to its genres. ",
+    "tags": [
+      "ML"
+    ],
+    "date": "July-November 2016"
+
+  }
+]
