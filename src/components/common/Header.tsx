@@ -1,10 +1,10 @@
+import { motion, useCycle, Variants } from "framer-motion";
+import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
-import { motion, useCycle } from "framer-motion";
-import { MenuToggle } from "./Menu";
-import { useRef } from "react";
 import { useDimensions } from "../../utils/useDimention";
+import { MenuToggle } from "./Menu";
 
-const sidebar = {
+const sidebar: Variants = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 100% 40px)`,
     transition: {
@@ -24,8 +24,8 @@ const sidebar = {
   },
 };
 
-function Header() {
-  const containerRef = useRef(null);
+const Header: React.FC = () => {
+  const containerRef = useRef<HTMLElement>(null);
   const { height } = useDimensions(containerRef);
   const [isOpen, toggleOpen] = useCycle(false, true);
 
@@ -134,6 +134,6 @@ function Header() {
       </motion.nav>
     </nav>
   );
-}
+};
 
 export default Header;

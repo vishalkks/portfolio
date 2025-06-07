@@ -1,6 +1,13 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import React from "react";
 
-const Path = (props) => (
+interface PathProps {
+  variants?: Variants;
+  d?: string;
+  transition?: any;
+}
+
+const Path: React.FC<PathProps> = (props) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
@@ -10,7 +17,11 @@ const Path = (props) => (
   />
 );
 
-export const MenuToggle = ({ toggle }) => (
+interface MenuToggleProps {
+  toggle: () => void;
+}
+
+export const MenuToggle: React.FC<MenuToggleProps> = ({ toggle }) => (
   <button onClick={toggle} className="relative block z-50">
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
