@@ -1,7 +1,13 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import React from "react";
 
-function CallAction({ label, link }) {
-  const buttonVariant = {
+interface CallActionProps {
+  label: string;
+  link: string;
+}
+
+const CallAction: React.FC<CallActionProps> = ({ label, link }) => {
+  const buttonVariant: Variants = {
     beforeHover: {},
     onHover: { scaleX: 0.75, scaleY: 0.4 },
   };
@@ -13,11 +19,12 @@ function CallAction({ label, link }) {
       whileHover="onHover"
       whileTap={{ scale: 0.94 }}
       target="_blank"
+      rel="noopener noreferrer"
     >
       {label}
       <motion.div variants={buttonVariant} className="action-btn-shadow" />
     </motion.a>
   );
-}
+};
 
 export default CallAction;

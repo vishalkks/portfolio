@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
+import React from "react";
 
-function Button({ label }) {
+interface ButtonProps {
+  label: string;
+}
+
+const Button: React.FC<ButtonProps> = ({ label }) => {
   const buttonVariant = {
     beforeHover: {},
     onHover: { scaleX: 0.75, scaleY: 0.4 },
@@ -20,6 +25,6 @@ function Button({ label }) {
       />
     </motion.button>
   );
-}
+};
 
 export default Button;

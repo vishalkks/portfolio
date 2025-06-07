@@ -1,6 +1,9 @@
 import React from "react";
 
-function MessageInput({ ...props }) {
+interface MessageInputProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+
+const MessageInput: React.FC<MessageInputProps> = ({ ...props }) => {
   return (
     <div>
       <textarea
@@ -11,6 +14,6 @@ function MessageInput({ ...props }) {
       />
     </div>
   );
-}
+};
 
 export default MessageInput;

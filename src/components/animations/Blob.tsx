@@ -1,16 +1,35 @@
-import { useEffect, useRef, useState } from "react";
 import { spline } from "@georgedoescode/spline";
 import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 import { createPoints, map, noise } from "../../utils/helpers";
 
-function Blob({ uid }) {
-  const ref = useRef();
-  const [hue, setHue] = useState();
-  const [scale, setScale] = useState(0);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+interface Point {
+  x: number;
+  y: number;
+  originX: number;
+  originY: number;
+  noiseOffsetX: number;
+  noiseOffsetY: number;
+}
 
-  function animate(points) {
+interface Position {
+  x: number;
+  y: number;
+}
+
+interface BlobProps {
+  uid: number;
+}
+
+const Blob: React.FC<BlobProps> = ({ uid }) => {
+  const ref = useRef<SVGPathElement>(null);
+  const [hue, setHue] = useState<number>(0);
+  const [scale, setScale] = useState<number>(0);
+  const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
+
+  function animate(points: Point[]): void {
     const path = ref.current;
+    if (!path) return;
 
     for (let i = 0; i < points.length; i++) {
       const point = points[i];
@@ -66,6 +85,6 @@ function Blob({ uid }) {
       </motion.svg>
     </motion.div>
   );
-}
+};
 
 export default Blob;

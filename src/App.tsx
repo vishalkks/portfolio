@@ -1,22 +1,23 @@
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import WebFont from "webfontloader";
+import Footer from "./components/common/Footer";
+import Header from "./components/common/Header";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
-import Header from "./components/common/Header";
-import Footer from "./components/common/Footer";
-import Blog from "./pages/Blog";
-import WebFont from 'webfontloader';
-import { useEffect } from "react";
 
-function App() {
+const App = () => {
   //load fonts
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ['Roboto']
-      }
+        families: ["Roboto"],
+      },
     });
   }, []);
+
   return (
     <>
       <Header />
@@ -31,6 +32,6 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 export default App;

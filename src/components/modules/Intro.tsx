@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
+import React from "react";
 import USER from "../../info/about.json";
 import Experience from "../common/Experience";
 
-function Intro() {
+interface UserInfo {
+  name: string;
+  title: string;
+}
+
+const Intro: React.FC = () => {
+  const userInfo: UserInfo = USER;
+
   return (
     <div className="my-20">
       <motion.h2
@@ -11,7 +19,7 @@ function Intro() {
         transition={{ ease: "easeOut", duration: 0.6 }}
         className="text-6xl"
       >
-        {USER.name}
+        {userInfo.name}
       </motion.h2>
       <motion.div
         initial={{ x: -100, opacity: 0 }}
@@ -19,7 +27,7 @@ function Intro() {
         transition={{ ease: "easeOut", duration: 0.7 }}
         className="text-5xl pt-3 leading-snug font-light"
       >
-        {USER.title}
+        {userInfo.title}
       </motion.div>
 
       <motion.div
@@ -34,16 +42,9 @@ function Intro() {
       >
         <h3 className="text-3xl pt-3 leading-snug">Experience</h3>
         <Experience />
-        {/* <h3 className="text-3xl pt-3 leading-snug">Latest Projects</h3>
-        <div className="flex items-center justify-between gap-5 flex-col md:flex-row md:items-start">
-          {PROJECTS.slice(0, 3).map((item) => (
-            // <ProjectBox project={item} key={item.id} />
-            <RecipeReviewCard/>
-          ))}
-        </div> */}
       </motion.div>
     </div>
   );
-}
+};
 
 export default Intro;

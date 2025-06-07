@@ -1,8 +1,23 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import React from "react";
 import ProjectCard from "./ProjectCard";
 
-function ProjectBox({ project }) {
-  const textVariants = {
+interface Project {
+  id: number;
+  title: string;
+  image: string;
+  link: string;
+  desc: string;
+  tags: string[];
+  date: string;
+}
+
+interface ProjectBoxProps {
+  project: Project;
+}
+
+const ProjectBox: React.FC<ProjectBoxProps> = ({ project }) => {
+  const textVariants: Variants = {
     beforeHover: { x: -10 },
     onHover: { x: 0 },
   };
@@ -13,7 +28,7 @@ function ProjectBox({ project }) {
       whileHover="onHover"
       className="flex-1 overflow-hidden mt-4 w-full cursor-pointer"
     >
-        <ProjectCard project={project}/>
+      <ProjectCard project={project} />
       <motion.div
         variants={textVariants}
         className="flex items-start gap-2 leading-6 pt-2"
@@ -31,6 +46,6 @@ function ProjectBox({ project }) {
       </motion.div>
     </motion.div>
   );
-}
+};
 
 export default ProjectBox;

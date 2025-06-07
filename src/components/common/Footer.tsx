@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
+import React from "react";
 import USER from "../../info/about.json";
 
-function Footer() {
+interface UserInfo {
+  name: string;
+}
+
+const Footer: React.FC = () => {
+  const userInfo: UserInfo = USER;
+
   return (
     <footer className="w-full max-w-5xl mx-auto">
       <motion.nav
@@ -14,10 +21,10 @@ function Footer() {
         }}
         className="w-full flex items-center justify-center py-6 h-20 text-slate-400"
       >
-        © {USER.name}
+        © {userInfo.name}
       </motion.nav>
     </footer>
   );
-}
+};
 
 export default Footer;

@@ -1,13 +1,20 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
+import React, { useRef } from "react";
 import Blob from "./Blob";
-import { useRef } from "react";
 
-function useParallax(value, distance) {
+function useParallax(
+  value: MotionValue<number>,
+  distance: number
+): MotionValue<number> {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-function BlobsPlayground({ children }) {
-  const ref = useRef(null);
+interface BlobsPlaygroundProps {
+  children: React.ReactNode;
+}
+
+const BlobsPlayground: React.FC<BlobsPlaygroundProps> = ({ children }) => {
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 50);
 
@@ -23,6 +30,6 @@ function BlobsPlayground({ children }) {
       <div className="w-full max-w-5xl mx-auto px-6 z-20">{children}</div>
     </div>
   );
-}
+};
 
 export default BlobsPlayground;

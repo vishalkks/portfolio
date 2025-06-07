@@ -1,6 +1,15 @@
 import React from "react";
 
-function TextInput({ type = "text", error, ...props }) {
+interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  type?: string;
+  error?: string;
+}
+
+const TextInput: React.FC<TextInputProps> = ({
+  type = "text",
+  error,
+  ...props
+}) => {
   return (
     <div>
       <input
@@ -12,6 +21,6 @@ function TextInput({ type = "text", error, ...props }) {
       {error && <p>{error}</p>}
     </div>
   );
-}
+};
 
 export default TextInput;

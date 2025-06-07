@@ -1,7 +1,16 @@
 import { createNoise2D } from "simplex-noise";
 
-export const createPoints = () => {
-  const points = [];
+interface Point {
+  x: number;
+  y: number;
+  originX: number;
+  originY: number;
+  noiseOffsetX: number;
+  noiseOffsetY: number;
+}
+
+export const createPoints = (): Point[] => {
+  const points: Point[] = [];
   const numPoints = 6;
   const angleStep = (Math.PI * 2) / numPoints;
   const rad = 75;
@@ -24,11 +33,17 @@ export const createPoints = () => {
   return points;
 };
 
-export const map = (n, start1, end1, start2, end2) => {
+export const map = (
+  n: number,
+  start1: number,
+  end1: number,
+  start2: number,
+  end2: number
+): number => {
   return ((n - start1) / (end1 - start1)) * (end2 - start2) + start2;
 };
 
-export const noise = (x, y) => {
-  let noise = new createNoise2D();
-  return noise(x, y);
+export const noise = (x: number, y: number): number => {
+  const noiseGenerator = createNoise2D();
+  return noiseGenerator(x, y);
 };
