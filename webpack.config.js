@@ -5,7 +5,7 @@ module.exports = {
 	},
 	output: {
 		// Use a fixed filename for the PDF files
-		filename: 'static/media/VishalKSResume.pdf',
+		filename: 'static/media/VishalKS2025.pdf',
 		// Use a fixed public path for the PDF files
 		publicPath: '/',
 	},

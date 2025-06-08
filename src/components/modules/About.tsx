@@ -55,7 +55,7 @@ const About: React.FC = () => {
               viewport={{ amount: 1, once: true }}
               transition={{ type: "spring", duration: 0.6, delay: 0.7 }}
             >
-              <CallAction label="Resume" link="/docs/VishalKSResume.pdf" />
+              <CallAction label="Resume" link="/docs/VishalKS2025.pdf" />
             </motion.div>
           </div>
         </motion.div>
